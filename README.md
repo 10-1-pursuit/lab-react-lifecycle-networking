@@ -24,7 +24,7 @@ In this lab, you will build a simple page that will show all of the employees at
 
 1. Deploy this application to Netlify and add the link to your netlify site below:
 
-- [MY LIVE SITE URL]()
+- [MY LIVE SITE URL](https://stunning-capybara-5e0e5c.netlify.app/)
 
 ## Instructions
 

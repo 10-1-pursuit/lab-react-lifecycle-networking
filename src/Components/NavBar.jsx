@@ -3,7 +3,7 @@ import "./NavBar.css";
 export const NavBar = () => {
   return (
     <nav>
-      <h1>Northwest Animal Hospital</h1>
+      <h1>Queens Pokemon Center</h1>
     </nav>
   );
 };
