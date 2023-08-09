@@ -1,7 +1,20 @@
-export const PetList = () => {
+export const PetList = ({ pokeList }) => {
   return (
     <aside className="pets-list">
-      <p>No pets listed for this employee.</p>
+      {pokeList.length > 0 ? (
+        <div>
+          <ol>
+            {pokeList.map((pokemon, index) => (
+              <li key={index}>
+                {pokemon.name}
+                {pokemon.spriteUrl && <img src={pokemon.spriteUrl} alt={pokemon.name} />}
+              </li>
+            ))}
+          </ol>
+        </div>
+      ) : (
+        <></>
+      )}
     </aside>
   );
 };
