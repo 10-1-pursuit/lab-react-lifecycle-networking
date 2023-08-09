@@ -2,7 +2,7 @@
 
 In this lab, you will build a simple page that will show all of the employees at a local veterinarian hospital by accessing an external API. Then, you will make it so that, by clicking a button, the pets each doctor sees at the hospital appear.
 
-![Example of a completed application.](./assets/example.png)
+[My Deployed Site](https://shimmering-dusk-f8c37d.netlify.app/)
 
 ---
 

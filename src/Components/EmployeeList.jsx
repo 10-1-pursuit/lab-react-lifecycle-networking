@@ -2,12 +2,12 @@ import React from "react";
 import Employee from "./Employee";
 import "./EmployeeList.css";
 
-export const EmployeeList = () => {
+export const EmployeeList = ({ handleClick, pokeList, showPokemonList }) => {
   return (
     <main>
-      <h2>All Staff</h2>
+      <h2>All Gen 1 Pokemon</h2>
       <section className="employee-list">
-        <Employee />
+        <Employee handleClick={handleClick} pokeList={pokeList} showPokemonList={showPokemonList}/>
       </section>
     </main>
   );
