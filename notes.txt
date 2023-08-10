@@ -1,0 +1,7 @@
+if a file says 'db.json' 
+
+- json file is their 'database' 
+
+.then takes in a function 
+
+log is also a function
