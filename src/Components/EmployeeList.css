@@ -7,4 +7,5 @@ main {
   display: grid;
   gap: 25px;
   grid-template-columns: repeat(3, 1fr);
+  /* each column repeats in 3s, taking up 1 fraction of the page in 1 space */
 }
