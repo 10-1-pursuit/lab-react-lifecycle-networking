@@ -1,15 +1,22 @@
 import React from "react";
 import Employee from "./Employee.jsx";
 import "./EmployeeList.css";
+import { useState, useEffect } from "react";
 
 export const EmployeeList = ({employeeArray}) => {
+
+
 
   const employeesToRender = employeeArray.map((eachEmployeeObj)=> 
   <Employee 
   key={eachEmployeeObj.id}
-  employeeObjToRender={eachEmployeeObj}/>
-  
+  employeeIdToRender={eachEmployeeObj.id}
+  employeeObjToRender={eachEmployeeObj}
+
+  />
   )
+  
+  
 
   return (
     <main>
