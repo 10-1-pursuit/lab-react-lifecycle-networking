@@ -1,7 +1,21 @@
-export const PetList = () => {
+
+
+export const PetList = ({filterPet, showPets}) => {
+ 
+  function petN(){
+  if(filterPet.length === 0){
+  return(
+    <p> None Available At This Time.</p>
+  )
+}
+ }
+
   return (
+
     <aside className="pets-list">
-      <p>No pets listed for this employee.</p>
+
+{showPets ? filterPet : petN()}
+
     </aside>
   );
 };
