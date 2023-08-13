@@ -2,12 +2,18 @@ import React from "react";
 import Employee from "./Employee";
 import "./EmployeeList.css";
 
-export const EmployeeList = () => {
+import { useState, useEffect } from "react";
+
+export const EmployeeList = ({vetArray}) => {
+
+  const pokeRender = vetArray.map((eachObj) => <Employee key={eachObj} renderObj={eachObj} />)
+
+
   return (
     <main>
       <h2>All Staff</h2>
       <section className="employee-list">
-        <Employee />
+      {pokeRender}
       </section>
     </main>
   );
