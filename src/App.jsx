@@ -1,6 +1,6 @@
 import React from "react";
-import NavBar from "./Components/NavBar";
-import EmployeeList from "./Components/EmployeeList";
+import NavBar from "./Components/NavBar.jsx";
+import EmployeeList from "./Components/EmployeeList.jsx";
 
 function App () {
   return (
