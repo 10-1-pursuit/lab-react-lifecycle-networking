@@ -1,43 +1,31 @@
 import PetList from "./PetList";
-import { useState, useEffect } from 'react';
+import { useState } from "react";
 import "./Employee.css";
 
-export const Employee = () => {
-const [pokeEmployeeRender, setPokeEmployeeRender ] = useState( null )
-const [showPets, setShowPets] = useState(false);
+export const Employee = ({ employee }) => {
+  const [pets, setPets] = useState([]);
+  const [showPets, setShowPets] = useState(false);
 
-console.log('STATE OF pokeEmployeeRender:', pokeEmployeeRender)
-console.log('STATE OF showPets:', showPets);
-
-useEffect( ()=> {
-  const employeeId = 1;
-fetch(`https://pokeapi.co/api/v2/machine/${employeeId}/`)
-.then( response => response.json() )
-.then( (fetchedEmployeeObj) =>
-setPokeEmployeeRender(fetchedEmployeeObj) )
-.catch(err => console.error('Error fetching employee', err))
-} ,
-[]
-)
-
-const handleShowPetsClick = () => {
-  console.log('Show Pets button clicked')
-  setShowPets(prevShowPets => !prevShowPets)
-}
+  const handleShowPets = () => {
+    if(!pets.length) {
+      fetch(`http://localhost:3333/api/pets?employeeId=${employee.id}`)
+      .then((response) => response.json())
+      .then((data) => {
+      setPets(data.map((pet) => pet.name))
+      console.log(data.map((pet) => pet.name))
+    })
+      .catch((error) => {console.log(error)
+      setPets([])
+    })
+    }
+    setShowPets(!showPets)
+  }
   return (
     <article className="employee">
-    {pokeEmployeeRender ? 
-      (
-        <div>
-          <h3>{pokeEmployeeRender.move.name}</h3>
-          <h4>{pokeEmployeeRender.version_group.name}</h4>
-        </div>
-      )
-      :
-      <>Loading...</>  
-    }
-      <button onClick={handleShowPetsClick}>Show Pets</button>
-      {showPets && <PetList selectedPokemon={pokeEmployeeRender} />}
+      <h3>{employee.prefix} {employee.firstName} {employee.lastName} {employee.postfix}</h3>
+      <h4>{employee.title}</h4>
+      <button onClick={handleShowPets}>{showPets ? "Hide Pets" : "Show Pets"}</button>
+      {showPets && <PetList pets={pets}/>}
     </article>
   );
 };
