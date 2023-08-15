@@ -1,7 +1,7 @@
 import PetList from "./PetList";
 import "./Employee.css";
 
-export const Employee =({handleClick, pokeList, showPokemonDex}) => {
+export const Employee =({handleClick, pokeList, showPokemonList}) => {
   return (
     <article className="employee">
       <h3>Staff Member Name</h3>
@@ -10,9 +10,9 @@ export const Employee =({handleClick, pokeList, showPokemonDex}) => {
       <PetList/>
       <h3> Hoenn Region </h3><br/>
       <button onClick={handleClick}>
-        {showPokemonDex ? "Hide Pokemon" : "Show Pokemon"}
+        {showPokemonList ? "Hide Pokemon" : "Show Pokemon"}
       </button>
-      {showPokemonDex && <PetList pokeList={pokeList} /> }
+      {showPokemonList && <PetList pokeList={pokeList} /> }
     </article>
     );
 };
